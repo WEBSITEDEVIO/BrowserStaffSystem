@@ -6,7 +6,7 @@ const app = express();
 
 /* ===== Middleware ===== */
 app.use(cors({
-  origin: "https://jouw-frontend.vercel.app", // pas later aan
+  origin: "https://jouw-frontend.vercel.app",
   credentials: true
 }));
 app.use(express.json());
@@ -17,10 +17,10 @@ app.get("/", (req, res) => {
   res.send("BrowserStaffSystem backend running");
 });
 
-/* ===== Auth routes ===== */
+/* ===== Roblox auth ===== */
 require("./auth/roblox")(app);
 
-/* ===== Server start ===== */
+/* ===== Start server ===== */
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log("Server running on port " + PORT);
